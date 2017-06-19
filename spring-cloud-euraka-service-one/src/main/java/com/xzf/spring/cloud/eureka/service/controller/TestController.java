@@ -17,7 +17,6 @@ import java.util.List;
  *
  */
 @RestController
-@RequestMapping(value="/item")
 public class TestController {
 
     @Autowired
@@ -27,7 +26,7 @@ public class TestController {
     private RestTemplate restTemplate;
 
 
-    @GetMapping(value = "/user/info")
+    @GetMapping(value = "/item/user/info")
     public String getItemUserInfo() throws Exception{
         List<ServiceInstance>  serviceInstanceList = discoveryClient.getInstances("user-center");
         if(CollectionUtils.isEmpty(serviceInstanceList)){
@@ -38,6 +37,15 @@ public class TestController {
         String userInfo = restTemplate.getForObject(url,String.class);
         return userInfo;
     }
+
+    @GetMapping(value = "/metadata")
+    public String getServiceMetaData(){
+        List<ServiceInstance>  serviceInstanceList = discoveryClient.getInstances("item-center");
+        return serviceInstanceList.get(0).getMetadata().toString();
+    }
+
+
+
 
 
 }
