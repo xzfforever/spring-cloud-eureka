@@ -1,4 +1,4 @@
-package com.xzf.spring.cloud.eureka.springcloudeurakaserviceone;
+package com.xzf.spring.cloud.eureka.server;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringCloudEurakaServiceOneApplicationTests {
+public class SpringCloudEurakaServerApplicationTests {
 
 	@Test
 	public void contextLoads() {
